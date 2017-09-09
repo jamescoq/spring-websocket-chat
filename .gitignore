@@ -20,3 +20,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/local.properties
+catalog.xml
+rebel.xml
+velocity.log
+nbactions.xml
+nb-configuration.xml
+nbactions-deploy.xml
+.settings/
+.project
+.classpath
+_sprite.*
+*.idea
+*.iml
+target/
+node_modules/
+dist/
+.tern-project

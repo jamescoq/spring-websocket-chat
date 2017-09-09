@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebSocket chat app</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<link href="css/chat.css" rel="stylesheet">
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sockjs-0.3.4.js"></script>
+<script src="js/stomp.js"></script>
+<script src="js/chat.js"></script>
+
+</head>
+<body>
+	<div id="chat-app" class="container-fluid">
+		<!-- Header -->
+		<div class="row">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<h2>Websocket chat</h2>
+					</div>
+					<a href="/chatapp/logout" id="logout-btn" type="button"
+						class="btn btn-default navbar-btn btn-sm navbar-right">
+						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+						Logout
+					</a>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Chat -->
+		<div id="chat-window" class="row">
+
+			<!-- User list -->
+			<div class="col-sm-3 col-md-push-9 col-lg-push-9">
+				<h3>Logged users</h3>
+				<ul id="chat-users">
+				</ul>
+			</div>
+
+			<!-- Chat relations -->
+			<div class="col-sm-9 col-md-pull-3 col-lg-pull-3">
+				<ul id="session-headings" class="nav nav-tabs">
+					<li class="active" data-sessionid="group">
+						<a data-toggle="tab" href="#group">Group</a>
+					</li>
+				</ul>
+
+				<div id="session-contents" class="tab-content">
+					<div id="group" class="tab-pane fade in active mh-sm mh-md mh-xs">
+						<h3>Group relation</h3>
+						<div class="messages-wrapper"></div>
+						<span class="anchor"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Text area and button -->
+		<div id="chat-textarea" class="row">
+			<div class="form-group">
+				<textarea id="message-area" class="form-control"
+					placeholder="Write your message here and press enter ..."></textarea>
+			</div>
+			<a id="send-message" class="btn btn-block btn-success">Submit</a>
+		</div>
+
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var chat = new Chat({
+			wrapperId : 'chat-app'
+		});
+		chat.init();
+	});
+</script>

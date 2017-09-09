@@ -1,0 +1,49 @@
+@media (max-width: 767px) {	
+	.mh-xs {
+		min-height: 250px;
+		height: 250px;
+		overflow: auto;
+	} 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {	
+	.mh-sm {
+		min-height: 300px;
+		height: 300px;
+		overflow: auto;
+	} 
+}
+
+@media (min-width: 992px) {	
+	.mh-md {
+		min-height: 400px;
+		height: 400px;
+		overflow: auto;
+	}
+}
+
+.nav .glyphicon {
+	top: -9px;
+	left: -13px;
+}
+.nav-tabs > li {
+	min-width: 100px;
+}
+.nav-tabs > li > a {
+	background-color: #efeef0;
+}
+
+.nav-tabs > li.waiting > a {
+	background-color: #d4ff64;
+}
+
+#chat-users li {
+	cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 0px 3px 10px;
+}
+
+#chat-users {
+	list-style-image: url('images/man-human-person-login-128.png');
+	width: 150px;
+}
